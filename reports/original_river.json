@@ -1,0 +1,79 @@
+{
+  "document_id": "original_river",
+  "filename": "original_river.docx",
+  "original_submission": "docx/original_river.docx",
+  "original_submission_link": "../sample_submissions/docx/original_river.docx",
+  "extraction_status": "ok",
+  "total_integrity_risk": "HIGH",
+  "scores": {
+    "peer_similarity_percentage": 100,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 0.151
+  },
+  "peer_matches": [
+    {
+      "query_document": "original_river",
+      "matched_document": "original_river_spoken",
+      "query_passage": "A fictional river monitoring group found that placing sampling kits near bus stops increased volunteer participation. The team compared weekly signups and found transport access mattered more than reminder frequency.",
+      "matched_passage": "A fictional river monitor in group found that placing sampling kits near bus stops increased volunteer participation, the team compared weekly sign-ups and found transport access mattered more than reminder frequency, they repeated observations across seasonal surveys and shared the results with the local watershed council.",
+      "cosine_similarity": 0.9553,
+      "lexical_similarity": 0.5939,
+      "combined_similarity": 0.8831,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "paragraph 3",
+      "matched_location": "0.0–17.6s",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.955, lexical cosine is 0.594, and the 0.8/0.2 combined score is 0.883; verify the displayed excerpts and locations.",
+      "matched_submission": "video/original_river_spoken.mp4",
+      "matched_submission_link": "../sample_submissions/video/original_river_spoken.mp4",
+      "decision_threshold": 0.6
+    }
+  ],
+  "multimodal_matches": [
+    {
+      "query_document": "original_river",
+      "matched_document": "original_river_spoken",
+      "query_passage": "A fictional river monitoring group found that placing sampling kits near bus stops increased volunteer participation. The team compared weekly signups and found transport access mattered more than reminder frequency.",
+      "matched_passage": "A fictional river monitor in group found that placing sampling kits near bus stops increased volunteer participation, the team compared weekly sign-ups and found transport access mattered more than reminder frequency, they repeated observations across seasonal surveys and shared the results with the local watershed council.",
+      "cosine_similarity": 0.9553,
+      "lexical_similarity": 0.5939,
+      "combined_similarity": 0.8831,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "paragraph 3",
+      "matched_location": "0.0–17.6s",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.955, lexical cosine is 0.594, and the 0.8/0.2 combined score is 0.883; verify the displayed excerpts and locations.",
+      "matched_submission": "video/original_river_spoken.mp4",
+      "matched_submission_link": "../sample_submissions/video/original_river_spoken.mp4",
+      "decision_threshold": 0.6
+    }
+  ],
+  "external_matches": [],
+  "ai_analysis": {
+    "ai_generated_probability": 0.151,
+    "features_used": {
+      "sentence_length_cv": 0.531,
+      "type_token_ratio": 0.9706,
+      "repeated_bigram_rate": 0.0
+    },
+    "explanation": "Heuristic pattern score only; writing style cannot establish authorship and human text may score highly.",
+    "detector_method": "reproducible length-variation, vocabulary-diversity, and repeated-bigram heuristic; uncalibrated"
+  },
+  "explanations": [
+    "The semantic embedding cosine is 0.955, lexical cosine is 0.594, and the 0.8/0.2 combined score is 0.883; verify the displayed excerpts and locations."
+  ],
+  "warnings": [],
+  "processing_metadata": {
+    "chunk_count": 4,
+    "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+    "score_method": "combined_minilm_tfidf",
+    "embedding_model_error": null,
+    "comparison_score": "0.8 * MiniLM semantic cosine + 0.2 * TF-IDF lexical cosine",
+    "threshold": 0.6,
+    "risk_thresholds": {
+      "medium": 10.0,
+      "high": 25.0
+    },
+    "transcription_status": null
+  }
+}

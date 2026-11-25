@@ -1,0 +1,41 @@
+{
+  "document_id": "llm_style_synthetic",
+  "filename": "llm_style_synthetic.docx",
+  "original_submission": "docx/llm_style_synthetic.docx",
+  "original_submission_link": "../sample_submissions/docx/llm_style_synthetic.docx",
+  "extraction_status": "ok",
+  "total_integrity_risk": "LOW",
+  "scores": {
+    "peer_similarity_percentage": 0.0,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 0.2194
+  },
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "ai_analysis": {
+    "ai_generated_probability": 0.2194,
+    "features_used": {
+      "sentence_length_cv": 0.3284,
+      "type_token_ratio": 0.9487,
+      "repeated_bigram_rate": 0.0
+    },
+    "explanation": "Heuristic pattern score only; writing style cannot establish authorship and human text may score highly.",
+    "detector_method": "reproducible length-variation, vocabulary-diversity, and repeated-bigram heuristic; uncalibrated"
+  },
+  "explanations": [],
+  "warnings": [],
+  "processing_metadata": {
+    "chunk_count": 4,
+    "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+    "score_method": "combined_minilm_tfidf",
+    "embedding_model_error": null,
+    "comparison_score": "0.8 * MiniLM semantic cosine + 0.2 * TF-IDF lexical cosine",
+    "threshold": 0.6,
+    "risk_thresholds": {
+      "medium": 10.0,
+      "high": 25.0
+    },
+    "transcription_status": null
+  }
+}

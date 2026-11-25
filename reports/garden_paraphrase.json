@@ -1,0 +1,133 @@
+{
+  "document_id": "garden_paraphrase",
+  "filename": "garden_paraphrase.docx",
+  "original_submission": "docx/garden_paraphrase.docx",
+  "original_submission_link": "../sample_submissions/docx/garden_paraphrase.docx",
+  "extraction_status": "ok",
+  "total_integrity_risk": "HIGH",
+  "scores": {
+    "peer_similarity_percentage": 100,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 0.1878
+  },
+  "peer_matches": [
+    {
+      "query_document": "garden_paraphrase",
+      "matched_document": "coastal_paraphrase",
+      "query_passage": "In Alderwick, neighbors transformed vacant municipal land into a communal growing space. They rotated irrigation duties, recorded weekly moisture readings, and reviewed plot yields. A simple shared schedule spread the labor while extending produce access to people in flats.",
+      "matched_passage": "In Alderwick, neighbors transformed vacant municipal land into a communal growing space. They rotated irrigation duties, recorded weekly moisture readings, and reviewed plot yields. A simple shared schedule spread the labor while extending produce access to people in flats.",
+      "cosine_similarity": 1.0,
+      "lexical_similarity": 1.0,
+      "combined_similarity": 1.0,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "paragraph 3",
+      "matched_location": "page 1",
+      "match_category": "exact-copy",
+      "explanation": "The semantic embedding cosine is 1.000, lexical cosine is 1.000, and the 0.8/0.2 combined score is 1.000; verify the displayed excerpts and locations.",
+      "matched_submission": "pdf/coastal_paraphrase.pdf",
+      "matched_submission_link": "../sample_submissions/pdf/coastal_paraphrase.pdf",
+      "decision_threshold": 0.6
+    },
+    {
+      "query_document": "garden_paraphrase",
+      "matched_document": "garden_copy",
+      "query_passage": "In Alderwick, neighbors transformed vacant municipal land into a communal growing space. They rotated irrigation duties, recorded weekly moisture readings, and reviewed plot yields. A simple shared schedule spread the labor while extending produce access to people in flats.",
+      "matched_passage": "The fictional town of Alderwick converted an unused lot into a neighborhood garden. Residents formed watering teams, tracked soil moisture each week, and compared harvests. Shared rules helped distribute work and gave apartment residents access to fresh food.",
+      "cosine_similarity": 0.7801,
+      "lexical_similarity": 0.0715,
+      "combined_similarity": 0.6384,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "paragraph 3",
+      "matched_location": "page 1",
+      "match_category": "semantic",
+      "explanation": "The semantic embedding cosine is 0.780, lexical cosine is 0.071, and the 0.8/0.2 combined score is 0.638; verify the displayed excerpts and locations.",
+      "matched_submission": "pdf/garden_copy.pdf",
+      "matched_submission_link": "../sample_submissions/pdf/garden_copy.pdf",
+      "decision_threshold": 0.6
+    },
+    {
+      "query_document": "garden_paraphrase",
+      "matched_document": "garden_original",
+      "query_passage": "In Alderwick, neighbors transformed vacant municipal land into a communal growing space. They rotated irrigation duties, recorded weekly moisture readings, and reviewed plot yields. A simple shared schedule spread the labor while extending produce access to people in flats.",
+      "matched_passage": "The fictional town of Alderwick converted an unused lot into a neighborhood garden. Residents formed watering teams, tracked soil moisture each week, and compared harvests. Shared rules helped distribute work and gave apartment residents access to fresh food.",
+      "cosine_similarity": 0.7801,
+      "lexical_similarity": 0.0715,
+      "combined_similarity": 0.6384,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "paragraph 3",
+      "matched_location": "page 1",
+      "match_category": "semantic",
+      "explanation": "The semantic embedding cosine is 0.780, lexical cosine is 0.071, and the 0.8/0.2 combined score is 0.638; verify the displayed excerpts and locations.",
+      "matched_submission": "pdf/garden_original.pdf",
+      "matched_submission_link": "../sample_submissions/pdf/garden_original.pdf",
+      "decision_threshold": 0.6
+    },
+    {
+      "query_document": "garden_paraphrase",
+      "matched_document": "garden_spoken",
+      "query_passage": "In Alderwick, neighbors transformed vacant municipal land into a communal growing space. They rotated irrigation duties, recorded weekly moisture readings, and reviewed plot yields. A simple shared schedule spread the labor while extending produce access to people in flats.",
+      "matched_passage": "The fictional town of Alderwick converted and unused lot into a neighborhood garden, residents formed watering teams, track soil moisture each week, and compared harvests, shared rules helped distribute work and gave apartment residents access to fresh food.",
+      "cosine_similarity": 0.7632,
+      "lexical_similarity": 0.0778,
+      "combined_similarity": 0.6261,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "paragraph 3",
+      "matched_location": "0.0–14.3s",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.763, lexical cosine is 0.078, and the 0.8/0.2 combined score is 0.626; verify the displayed excerpts and locations.",
+      "matched_submission": "video/garden_spoken.mp4",
+      "matched_submission_link": "../sample_submissions/video/garden_spoken.mp4",
+      "decision_threshold": 0.6
+    }
+  ],
+  "multimodal_matches": [
+    {
+      "query_document": "garden_paraphrase",
+      "matched_document": "garden_spoken",
+      "query_passage": "In Alderwick, neighbors transformed vacant municipal land into a communal growing space. They rotated irrigation duties, recorded weekly moisture readings, and reviewed plot yields. A simple shared schedule spread the labor while extending produce access to people in flats.",
+      "matched_passage": "The fictional town of Alderwick converted and unused lot into a neighborhood garden, residents formed watering teams, track soil moisture each week, and compared harvests, shared rules helped distribute work and gave apartment residents access to fresh food.",
+      "cosine_similarity": 0.7632,
+      "lexical_similarity": 0.0778,
+      "combined_similarity": 0.6261,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "paragraph 3",
+      "matched_location": "0.0–14.3s",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.763, lexical cosine is 0.078, and the 0.8/0.2 combined score is 0.626; verify the displayed excerpts and locations.",
+      "matched_submission": "video/garden_spoken.mp4",
+      "matched_submission_link": "../sample_submissions/video/garden_spoken.mp4",
+      "decision_threshold": 0.6
+    }
+  ],
+  "external_matches": [],
+  "ai_analysis": {
+    "ai_generated_probability": 0.1878,
+    "features_used": {
+      "sentence_length_cv": 0.4282,
+      "type_token_ratio": 0.9535,
+      "repeated_bigram_rate": 0.0
+    },
+    "explanation": "Heuristic pattern score only; writing style cannot establish authorship and human text may score highly.",
+    "detector_method": "reproducible length-variation, vocabulary-diversity, and repeated-bigram heuristic; uncalibrated"
+  },
+  "explanations": [
+    "The semantic embedding cosine is 1.000, lexical cosine is 1.000, and the 0.8/0.2 combined score is 1.000; verify the displayed excerpts and locations.",
+    "The semantic embedding cosine is 0.780, lexical cosine is 0.071, and the 0.8/0.2 combined score is 0.638; verify the displayed excerpts and locations.",
+    "The semantic embedding cosine is 0.780, lexical cosine is 0.071, and the 0.8/0.2 combined score is 0.638; verify the displayed excerpts and locations.",
+    "The semantic embedding cosine is 0.763, lexical cosine is 0.078, and the 0.8/0.2 combined score is 0.626; verify the displayed excerpts and locations."
+  ],
+  "warnings": [],
+  "processing_metadata": {
+    "chunk_count": 4,
+    "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+    "score_method": "combined_minilm_tfidf",
+    "embedding_model_error": null,
+    "comparison_score": "0.8 * MiniLM semantic cosine + 0.2 * TF-IDF lexical cosine",
+    "threshold": 0.6,
+    "risk_thresholds": {
+      "medium": 10.0,
+      "high": 25.0
+    },
+    "transcription_status": null
+  }
+}

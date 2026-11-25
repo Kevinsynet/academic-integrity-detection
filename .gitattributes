@@ -1,0 +1,7 @@
+# Keep generated binary fixtures out of text diff and whitespace checks.
+*.pdf binary
+*.docx binary
+*.mp4 binary
+*.aiff binary
+*.wav binary
+*.csv text eol=lf

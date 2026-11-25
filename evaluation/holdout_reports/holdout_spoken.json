@@ -1,0 +1,149 @@
+{
+  "document_id": "holdout_spoken",
+  "filename": "holdout_spoken.mp4",
+  "original_submission": "video/holdout_spoken.mp4",
+  "original_submission_link": "../holdout_submissions/video/holdout_spoken.mp4",
+  "extraction_status": "ok",
+  "total_integrity_risk": "HIGH",
+  "scores": {
+    "peer_similarity_percentage": 100,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 0.2738
+  },
+  "peer_matches": [
+    {
+      "query_document": "holdout_spoken",
+      "matched_document": "holdout_exact_copy",
+      "query_passage": "The fictional city of Norval installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The library stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked error conditioning.",
+      "matched_passage": "The fictional city of Norvale installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The libraries stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked air conditioning.",
+      "cosine_similarity": 0.9423,
+      "lexical_similarity": 0.8513,
+      "combined_similarity": 0.9241,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "0.0–19.0s",
+      "matched_location": "page 1",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.942, lexical cosine is 0.851, and the 0.8/0.2 combined score is 0.924; verify the displayed excerpts and locations.",
+      "matched_submission": "pdf/holdout_exact_copy.pdf",
+      "matched_submission_link": "../holdout_submissions/pdf/holdout_exact_copy.pdf",
+      "decision_threshold": 0.6
+    },
+    {
+      "query_document": "holdout_spoken",
+      "matched_document": "holdout_original",
+      "query_passage": "The fictional city of Norval installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The library stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked error conditioning.",
+      "matched_passage": "The fictional city of Norvale installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The libraries stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked air conditioning.",
+      "cosine_similarity": 0.9423,
+      "lexical_similarity": 0.8513,
+      "combined_similarity": 0.9241,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "0.0–19.0s",
+      "matched_location": "page 1",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.942, lexical cosine is 0.851, and the 0.8/0.2 combined score is 0.924; verify the displayed excerpts and locations.",
+      "matched_submission": "pdf/holdout_original.pdf",
+      "matched_submission_link": "../holdout_submissions/pdf/holdout_original.pdf",
+      "decision_threshold": 0.6
+    },
+    {
+      "query_document": "holdout_spoken",
+      "matched_document": "holdout_paraphrase",
+      "query_passage": "The fictional city of Norval installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The library stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked error conditioning.",
+      "matched_passage": "Three Norvale libraries received bright roof coatings in a made-up city experiment. Investigators recorded room heat each afternoon through the summer and used neighboring untreated buildings for comparison. During hot spells, the treated libraries had lower temperatures, and their shaded spaces offered a refuge for people whose homes had no cooling system.",
+      "cosine_similarity": 0.8281,
+      "lexical_similarity": 0.1029,
+      "combined_similarity": 0.6831,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "0.0–19.0s",
+      "matched_location": "paragraph 2",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.828, lexical cosine is 0.103, and the 0.8/0.2 combined score is 0.683; verify the displayed excerpts and locations.",
+      "matched_submission": "docx/holdout_paraphrase.docx",
+      "matched_submission_link": "../holdout_submissions/docx/holdout_paraphrase.docx",
+      "decision_threshold": 0.6
+    }
+  ],
+  "multimodal_matches": [
+    {
+      "query_document": "holdout_spoken",
+      "matched_document": "holdout_exact_copy",
+      "query_passage": "The fictional city of Norval installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The library stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked error conditioning.",
+      "matched_passage": "The fictional city of Norvale installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The libraries stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked air conditioning.",
+      "cosine_similarity": 0.9423,
+      "lexical_similarity": 0.8513,
+      "combined_similarity": 0.9241,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "0.0–19.0s",
+      "matched_location": "page 1",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.942, lexical cosine is 0.851, and the 0.8/0.2 combined score is 0.924; verify the displayed excerpts and locations.",
+      "matched_submission": "pdf/holdout_exact_copy.pdf",
+      "matched_submission_link": "../holdout_submissions/pdf/holdout_exact_copy.pdf",
+      "decision_threshold": 0.6
+    },
+    {
+      "query_document": "holdout_spoken",
+      "matched_document": "holdout_original",
+      "query_passage": "The fictional city of Norval installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The library stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked error conditioning.",
+      "matched_passage": "The fictional city of Norvale installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The libraries stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked air conditioning.",
+      "cosine_similarity": 0.9423,
+      "lexical_similarity": 0.8513,
+      "combined_similarity": 0.9241,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "0.0–19.0s",
+      "matched_location": "page 1",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.942, lexical cosine is 0.851, and the 0.8/0.2 combined score is 0.924; verify the displayed excerpts and locations.",
+      "matched_submission": "pdf/holdout_original.pdf",
+      "matched_submission_link": "../holdout_submissions/pdf/holdout_original.pdf",
+      "decision_threshold": 0.6
+    },
+    {
+      "query_document": "holdout_spoken",
+      "matched_document": "holdout_paraphrase",
+      "query_passage": "The fictional city of Norval installed reflective roof panels at three public libraries. Over one summer, researchers measured indoor temperatures every afternoon and compared the readings with nearby buildings without panels. The library stayed cooler during heat waves, while shaded reading rooms remained open to residents who lacked error conditioning.",
+      "matched_passage": "Three Norvale libraries received bright roof coatings in a made-up city experiment. Investigators recorded room heat each afternoon through the summer and used neighboring untreated buildings for comparison. During hot spells, the treated libraries had lower temperatures, and their shaded spaces offered a refuge for people whose homes had no cooling system.",
+      "cosine_similarity": 0.8281,
+      "lexical_similarity": 0.1029,
+      "combined_similarity": 0.6831,
+      "vector_similarity_kind": "semantic_embedding",
+      "query_location": "0.0–19.0s",
+      "matched_location": "paragraph 2",
+      "match_category": "cross-modal",
+      "explanation": "The semantic embedding cosine is 0.828, lexical cosine is 0.103, and the 0.8/0.2 combined score is 0.683; verify the displayed excerpts and locations.",
+      "matched_submission": "docx/holdout_paraphrase.docx",
+      "matched_submission_link": "../holdout_submissions/docx/holdout_paraphrase.docx",
+      "decision_threshold": 0.6
+    }
+  ],
+  "external_matches": [],
+  "ai_analysis": {
+    "ai_generated_probability": 0.2738,
+    "features_used": {
+      "sentence_length_cv": 0.1575,
+      "type_token_ratio": 0.94,
+      "repeated_bigram_rate": 0.0
+    },
+    "explanation": "Heuristic pattern score only; writing style cannot establish authorship and human text may score highly.",
+    "detector_method": "reproducible length-variation, vocabulary-diversity, and repeated-bigram heuristic; uncalibrated"
+  },
+  "explanations": [
+    "The semantic embedding cosine is 0.942, lexical cosine is 0.851, and the 0.8/0.2 combined score is 0.924; verify the displayed excerpts and locations.",
+    "The semantic embedding cosine is 0.942, lexical cosine is 0.851, and the 0.8/0.2 combined score is 0.924; verify the displayed excerpts and locations.",
+    "The semantic embedding cosine is 0.828, lexical cosine is 0.103, and the 0.8/0.2 combined score is 0.683; verify the displayed excerpts and locations."
+  ],
+  "warnings": [],
+  "processing_metadata": {
+    "chunk_count": 1,
+    "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+    "score_method": "combined_minilm_tfidf",
+    "embedding_model_error": null,
+    "comparison_score": "0.8 * MiniLM semantic cosine + 0.2 * TF-IDF lexical cosine",
+    "threshold": 0.6,
+    "risk_thresholds": {
+      "medium": 10.0,
+      "high": 25.0
+    },
+    "transcription_status": "transcribed"
+  }
+}

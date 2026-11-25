@@ -1,0 +1,151 @@
+{
+  "synthetic": true,
+  "submissions": [
+    {
+      "id": "garden_original",
+      "kind": "original"
+    },
+    {
+      "id": "garden_copy",
+      "kind": "exact-copy",
+      "related_to": "garden_original"
+    },
+    {
+      "id": "coastal_paraphrase",
+      "kind": "paraphrase",
+      "related_to": "garden_original"
+    },
+    {
+      "id": "garden_paraphrase",
+      "kind": "paraphrase",
+      "related_to": "garden_original"
+    },
+    {
+      "id": "garden_spoken",
+      "kind": "spoken-cross-modal-sample",
+      "related_to": "garden_original"
+    },
+    {
+      "id": "repair_original",
+      "kind": "independent"
+    },
+    {
+      "id": "repair_independent",
+      "kind": "independent"
+    },
+    {
+      "id": "island_original",
+      "kind": "independent"
+    },
+    {
+      "id": "original_river",
+      "kind": "independent"
+    },
+    {
+      "id": "original_river_spoken",
+      "kind": "spoken-cross-modal-sample",
+      "related_to": "original_river"
+    },
+    {
+      "id": "llm_style_synthetic",
+      "kind": "synthetic-style-experiment"
+    },
+    {
+      "id": "silent_clip",
+      "kind": "degraded-silent-video"
+    },
+    {
+      "id": "empty_text",
+      "kind": "degraded-empty-pdf"
+    },
+    {
+      "id": "corrupted",
+      "kind": "degraded-corrupt-pdf"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "a": "garden_original",
+      "b": "garden_copy",
+      "type": "exact-copy"
+    },
+    {
+      "a": "garden_original",
+      "b": "garden_spoken",
+      "type": "cross-modal-exact-content"
+    },
+    {
+      "a": "original_river",
+      "b": "original_river_spoken",
+      "type": "cross-modal-exact-content"
+    },
+    {
+      "a": "garden_original",
+      "b": "coastal_paraphrase",
+      "type": "paraphrase"
+    },
+    {
+      "a": "garden_original",
+      "b": "garden_paraphrase",
+      "type": "paraphrase"
+    },
+    {
+      "a": "coastal_paraphrase",
+      "b": "garden_paraphrase",
+      "type": "exact-copy"
+    },
+    {
+      "a": "garden_copy",
+      "b": "coastal_paraphrase",
+      "type": "paraphrase"
+    },
+    {
+      "a": "garden_copy",
+      "b": "garden_paraphrase",
+      "type": "paraphrase"
+    },
+    {
+      "a": "garden_copy",
+      "b": "garden_spoken",
+      "type": "cross-modal-exact-content"
+    },
+    {
+      "a": "garden_spoken",
+      "b": "coastal_paraphrase",
+      "type": "cross-modal-paraphrase"
+    },
+    {
+      "a": "garden_spoken",
+      "b": "garden_paraphrase",
+      "type": "cross-modal-paraphrase"
+    }
+  ],
+  "boilerplate_control_pairs": [
+    {
+      "a": "garden_original",
+      "b": "island_original"
+    },
+    {
+      "a": "garden_original",
+      "b": "repair_original"
+    },
+    {
+      "a": "coastal_paraphrase",
+      "b": "repair_original"
+    },
+    {
+      "a": "original_river",
+      "b": "island_original"
+    },
+    {
+      "a": "garden_paraphrase",
+      "b": "repair_independent"
+    }
+  ],
+  "known_degraded_files": [
+    "pdf/corrupted.pdf",
+    "pdf/empty_text.pdf",
+    "video/silent_clip.mp4"
+  ],
+  "notes": "All content is fictional. garden_spoken.mp4 speaks the garden_original passage; original_river_spoken.mp4 speaks the original_river passage with additional fictional context. Both are generated with local English TTS and validated at 10\u201330 seconds. silent_clip.mp4 contains silence."
+}

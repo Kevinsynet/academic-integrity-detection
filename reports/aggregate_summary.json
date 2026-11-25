@@ -1,0 +1,145 @@
+{
+  "documents": 14,
+  "risk_counts": {
+    "HIGH": 7,
+    "LOW": 7
+  },
+  "processing_counts": {
+    "successful_with_text": 11,
+    "empty_or_no_speech": 2,
+    "failed_extraction": 1,
+    "skipped_video": 0,
+    "skipped_unsupported": 1
+  },
+  "skipped_files": [
+    "sample_submissions/dataset_manifest.json"
+  ],
+  "reports": [
+    {
+      "document_id": "garden_paraphrase",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.1878
+      }
+    },
+    {
+      "document_id": "island_original",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.1811
+      }
+    },
+    {
+      "document_id": "llm_style_synthetic",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.2194
+      }
+    },
+    {
+      "document_id": "original_river",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.151
+      }
+    },
+    {
+      "document_id": "repair_independent",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.1053
+      }
+    },
+    {
+      "document_id": "coastal_paraphrase",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.2853
+      }
+    },
+    {
+      "document_id": "corrupted",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.0
+      }
+    },
+    {
+      "document_id": "empty_text",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.0
+      }
+    },
+    {
+      "document_id": "garden_copy",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.3073
+      }
+    },
+    {
+      "document_id": "garden_original",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.3073
+      }
+    },
+    {
+      "document_id": "repair_original",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.2303
+      }
+    },
+    {
+      "document_id": "garden_spoken",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.3276
+      }
+    },
+    {
+      "document_id": "original_river_spoken",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.3298
+      }
+    },
+    {
+      "document_id": "silent_clip",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 0.0
+      }
+    }
+  ]
+}

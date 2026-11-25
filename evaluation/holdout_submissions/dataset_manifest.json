@@ -1,0 +1,69 @@
+{
+  "synthetic": true,
+  "split": "holdout",
+  "threshold_frozen_before_holdout_scoring": 0.6,
+  "submissions": [
+    {
+      "id": "holdout_original"
+    },
+    {
+      "id": "holdout_exact_copy"
+    },
+    {
+      "id": "holdout_paraphrase"
+    },
+    {
+      "id": "holdout_unrelated"
+    },
+    {
+      "id": "holdout_spoken"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "a": "holdout_original",
+      "b": "holdout_exact_copy",
+      "type": "exact-copy"
+    },
+    {
+      "a": "holdout_original",
+      "b": "holdout_paraphrase",
+      "type": "paraphrase"
+    },
+    {
+      "a": "holdout_exact_copy",
+      "b": "holdout_paraphrase",
+      "type": "paraphrase"
+    },
+    {
+      "a": "holdout_original",
+      "b": "holdout_spoken",
+      "type": "cross-modal-exact-content"
+    },
+    {
+      "a": "holdout_exact_copy",
+      "b": "holdout_spoken",
+      "type": "cross-modal-exact-content"
+    },
+    {
+      "a": "holdout_paraphrase",
+      "b": "holdout_spoken",
+      "type": "cross-modal-paraphrase"
+    }
+  ],
+  "boilerplate_control_pairs": [
+    {
+      "a": "holdout_original",
+      "b": "holdout_unrelated"
+    },
+    {
+      "a": "holdout_exact_copy",
+      "b": "holdout_unrelated"
+    },
+    {
+      "a": "holdout_paraphrase",
+      "b": "holdout_unrelated"
+    }
+  ],
+  "notes": "Fictional, independently authored hold-out content with exact-copy, paraphrase, speech, unrelated and shared administrative boilerplate cases. The 0.60 threshold is fixed from development configuration and was not selected using these examples."
+}

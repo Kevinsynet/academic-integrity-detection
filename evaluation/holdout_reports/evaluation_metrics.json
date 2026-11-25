@@ -1,0 +1,63 @@
+{
+  "dataset_split": "holdout",
+  "synthetic": true,
+  "threshold": 0.6,
+  "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+  "documents": 5,
+  "evaluated_pairs": 10,
+  "expected_positive_pairs": 6,
+  "predicted_positive_pairs": 6,
+  "tp": 6,
+  "fp": 0,
+  "fn": 0,
+  "tn": 4,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "confusion_matrix_actual_rows_predicted_columns": [
+    [
+      6,
+      0
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "scenario_metrics": {
+    "exact-copy": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 9,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "paraphrase": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "cross-modal": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "boilerplate_controls": {
+    "control_pairs": 3,
+    "false_positive_pairs": 0,
+    "specificity_on_controls": 1.0,
+    "false_positive_pair_ids": []
+  },
+  "excluded_non_evaluable": []
+}

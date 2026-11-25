@@ -1,0 +1,39 @@
+{
+  "document_id": "empty_text",
+  "filename": "empty_text.pdf",
+  "original_submission": "pdf/empty_text.pdf",
+  "original_submission_link": "../sample_submissions/pdf/empty_text.pdf",
+  "extraction_status": "empty",
+  "total_integrity_risk": "LOW",
+  "scores": {
+    "peer_similarity_percentage": 0.0,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 0.0
+  },
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "ai_analysis": {
+    "ai_generated_probability": 0.0,
+    "features_used": {},
+    "explanation": "Insufficient text for a stable heuristic estimate.",
+    "detector_method": "transparent linguistic heuristic; not calibrated"
+  },
+  "explanations": [],
+  "warnings": [
+    "No extractable text; scanned image PDFs require a separately configured OCR step."
+  ],
+  "processing_metadata": {
+    "chunk_count": 0,
+    "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+    "score_method": "combined_minilm_tfidf",
+    "embedding_model_error": null,
+    "comparison_score": "0.8 * MiniLM semantic cosine + 0.2 * TF-IDF lexical cosine",
+    "threshold": 0.6,
+    "risk_thresholds": {
+      "medium": 10.0,
+      "high": 25.0
+    },
+    "transcription_status": null
+  }
+}

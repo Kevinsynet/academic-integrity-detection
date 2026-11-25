@@ -1,0 +1,64 @@
+# OS/editor artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.Spotlight-V100/
+.Trashes/
+
+# Python environments, bytecode, test and tool caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Downloaded models and temporary/generated runtime data
+models/
+.cache/
+.huggingface/
+hf_cache/
+*.tmp
+*.temp
+*.wav
+*.aiff
+*.log
+tmp/
+temp/
+dist/
+build/
+
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Editor metadata
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Reports may contain extracted student work; keep generated reports out of Git
+/reports/
+/evaluation/holdout_reports/
+
+# Keep private submissions outside the repository or in these ignored locations
+/submissions/
+/student_submissions/
+/real_submissions/
+/private_submissions/
+**/student_submissions/
+**/real_submissions/
+**/private_submissions/
