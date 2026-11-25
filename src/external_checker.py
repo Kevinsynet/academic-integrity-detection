@@ -22,7 +22,9 @@ def load_references(path):
 
     entries = data.get("references") if isinstance(data, dict) else data
     if not isinstance(entries, list):
-        log.warning("Reference corpus %s must contain a list of references", reference_path)
+        log.warning(
+            "Reference corpus %s must contain a list of references", reference_path
+        )
         return []
 
     valid = []
@@ -30,13 +32,23 @@ def load_references(path):
         if not isinstance(entry, dict):
             log.warning("Skipping reference entry %d: expected an object", index)
             continue
-        missing = [field for field in REQUIRED_FIELDS if not isinstance(entry.get(field), str) or not entry[field].strip()]
+        missing = [
+            field
+            for field in REQUIRED_FIELDS
+            if not isinstance(entry.get(field), str) or not entry[field].strip()
+        ]
         if missing:
-            log.warning("Skipping reference entry %d: missing or empty fields %s", index, ", ".join(missing))
+            log.warning(
+                "Skipping reference entry %d: missing or empty fields %s",
+                index,
+                ", ".join(missing),
+            )
             continue
         source_url = entry.get("source_url")
         if source_url is not None and not isinstance(source_url, str):
-            log.warning("Skipping reference entry %d: source_url must be text or null", index)
+            log.warning(
+                "Skipping reference entry %d: source_url must be text or null", index
+            )
             continue
         valid.append(entry)
     if not valid:

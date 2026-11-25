@@ -1,18 +1,20 @@
 import sys
 
-import numpy as np
 from src.embeddings import Embedder
 from src.similarity import cosine_matrix
 
 PARAPHRASE = "Neighbors in Alderwick created a shared garden and rotated watering duties every week."
 RELATED = "Alderwick residents established a community garden and divided weekly irrigation work."
-UNRELATED = "Quantum chromodynamics describes quarks, gluons, and particle interactions."
+UNRELATED = (
+    "Quantum chromodynamics describes quarks, gluons, and particle interactions."
+)
 
 
 def test_primary_model_dimensions_and_paraphrase_ranking():
     embedder = Embedder(device="cpu")
     if embedder.fallback:
         import pytest
+
         pytest.skip(f"primary model could not load: {embedder.failure_reason}")
     vectors = embedder.encode([PARAPHRASE, RELATED, UNRELATED])
     assert vectors.shape == (3, 384)

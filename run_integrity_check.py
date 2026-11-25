@@ -9,6 +9,8 @@ from pathlib import Path
 from src.config import Config
 from src.pipeline import discover, discover_skipped, run_pipeline
 
+log = logging.getLogger(__name__)
+
 
 def _parser():
     parser = argparse.ArgumentParser(
@@ -23,11 +25,15 @@ def _parser():
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--reference_dir", default="./reference_data")
     parser.add_argument(
-        "--risk_medium", type=float, default=10.0,
+        "--risk_medium",
+        type=float,
+        default=10.0,
         help="Coverage percentage at which risk becomes MEDIUM",
     )
     parser.add_argument(
-        "--risk_high", type=float, default=25.0,
+        "--risk_high",
+        type=float,
+        default=25.0,
         help="Coverage percentage at which risk becomes HIGH",
     )
     parser.add_argument("--skip_video", action="store_true")
@@ -48,9 +54,13 @@ def _configuration(parser, args):
     if not 0 <= config.threshold <= 1:
         parser.error("--threshold must be between 0 and 1")
     if config.chunk_size <= 0 or not 0 <= config.overlap < config.chunk_size:
-        parser.error("--chunk_size must be positive and --overlap must be in [0, chunk_size)")
+        parser.error(
+            "--chunk_size must be positive and --overlap must be in [0, chunk_size)"
+        )
     if not 0 <= config.risk_medium < config.risk_high <= 100:
-        parser.error("Risk thresholds must satisfy 0 <= --risk_medium < --risk_high <= 100")
+        parser.error(
+            "Risk thresholds must satisfy 0 <= --risk_medium < --risk_high <= 100"
+        )
     if config.batch_size <= 0:
         parser.error("--batch_size must be positive")
     return config
@@ -70,7 +80,9 @@ def main(argv=None):
     for path in skipped:
         print(f"Skipped unsupported file: {path}")
     if not paths:
-        print(f"No supported PDF, DOCX, or MP4 files found; skipped {len(skipped)} unsupported files.")
+        print(
+            f"No supported PDF, DOCX, or MP4 files found; skipped {len(skipped)} unsupported files."
+        )
         return 2
 
     try:
@@ -83,14 +95,18 @@ def main(argv=None):
             skipped_files=skipped,
         )
     except Exception as exc:
-        logging.exception("Pipeline failed")
+        log.exception("Pipeline failed")
         print(f"Pipeline failed: {exc}", file=sys.stderr)
         return 1
 
     failed = sum(report["extraction_status"] == "error" for report in reports)
     empty = sum(report["extraction_status"] == "empty" for report in reports)
-    video_skipped = sum(report["extraction_status"] == "video_skipped" for report in reports)
-    failure_label = "per-file extraction failure" if failed == 1 else "per-file extraction failures"
+    video_skipped = sum(
+        report["extraction_status"] == "video_skipped" for report in reports
+    )
+    failure_label = (
+        "per-file extraction failure" if failed == 1 else "per-file extraction failures"
+    )
     skipped_label = "unsupported file" if len(skipped) == 1 else "unsupported files"
     print(
         f"Completed batch: {len(reports)} supported files; {failed} {failure_label}; "

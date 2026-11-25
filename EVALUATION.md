@@ -64,6 +64,7 @@ The pipeline uses normalized 384-dimensional MiniLM vectors in an exact NumPy in
 ## Final verification run
 
 - A fresh Python 3.11 virtual environment was created outside the repository and installed from `requirements.txt`; `pip check` reported no broken requirements.
+- With a new, empty `HF_HOME`, the sample batch downloaded and loaded both `sentence-transformers/all-MiniLM-L6-v2` and the faster-whisper `tiny` model from Hugging Face, then completed without using a pre-existing model cache.
 - `python -m compileall -q src scripts tests run_integrity_check.py` succeeded in that environment.
 - `python -m pytest -q` → **28 passed, 5 warnings**. The warnings are non-failing PyMuPDF/SWIG deprecations.
 - Development CLI exited 0, processing 14 supported submissions with 1 corrupt-PDF extraction failure, 2 empty/no-speech inputs (the empty PDF and silent MP4), and 1 unsupported manifest JSON skipped.
@@ -71,6 +72,7 @@ The pipeline uses normalized 384-dimensional MiniLM vectors in an exact NumPy in
 - All 14 development and 5 hold-out IDs have individual JSON and Markdown reports. The matrices are 15×15 and 6×6 including headers; aggregate summaries and evaluator JSON were regenerated.
 - Every report’s original-submission link was checked against the generated inputs; aggregate counts and report IDs match. Sample document text and reports were checked for local absolute paths, credential patterns, and personal identifiers; none was found.
 - Both spoken development MP4s were transcribed by Whisper and their reports contain cross-modal matches with start/end time ranges. Separate tests verify transcript text and timestamp bounds; silent and missing-audio cases are covered as empty outcomes or extraction errors.
+- The corrupt-PDF warning was expected from the degraded fixture. First-use model downloads also emitted an unauthenticated Hugging Face rate-limit notice, a CTranslate2 optional-MPS performance tip, and a PyTorch macOS redirection note; these did not prevent either batch from completing.
 
 ## Limitations
 

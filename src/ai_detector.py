@@ -1,6 +1,7 @@
 """Transparent, uncalibrated writing-style heuristic for reviewer context."""
 
 import re
+from itertools import pairwise
 
 
 def analyze_ai(text):
@@ -19,19 +20,27 @@ def analyze_ai(text):
             "detector_method": "transparent linguistic heuristic; not calibrated",
         }
 
-    sentence_lengths = [len(re.findall(r"\w+", sentence)) for sentence in sentences] or [0]
+    sentence_lengths = [
+        len(re.findall(r"\w+", sentence)) for sentence in sentences
+    ] or [0]
     vocabulary_ratio = len(set(words)) / max(word_count, 1)
-    bigrams = list(zip(words, words[1:]))
+    bigrams = list(pairwise(words))
     repeated_bigram_rate = 1 - len(set(bigrams)) / max(1, word_count - 1)
     mean_length = sum(sentence_lengths) / len(sentence_lengths)
-    variance = sum((length - mean_length) ** 2 for length in sentence_lengths) / len(sentence_lengths)
-    standard_deviation = variance ** 0.5
+    variance = sum((length - mean_length) ** 2 for length in sentence_lengths) / len(
+        sentence_lengths
+    )
+    standard_deviation = variance**0.5
     length_cv = standard_deviation / max(mean_length, 1)
     smoothness = 1 - min(1, length_cv)
     score = max(
         0,
-        min(1, 0.30 * smoothness + 0.35 * (1 - vocabulary_ratio)
-            + 0.35 * min(1, repeated_bigram_rate * 4)),
+        min(
+            1,
+            0.30 * smoothness
+            + 0.35 * (1 - vocabulary_ratio)
+            + 0.35 * min(1, repeated_bigram_rate * 4),
+        ),
     )
     return {
         "ai_generated_probability": round(score, 4),

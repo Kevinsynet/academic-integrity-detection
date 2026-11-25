@@ -10,7 +10,9 @@ log = logging.getLogger(__name__)
 class Embedder:
     """Load MiniLM first; use corpus-fitted TF-IDF only when it cannot load."""
 
-    def __init__(self, device="cpu", model_name="sentence-transformers/all-MiniLM-L6-v2"):
+    def __init__(
+        self, device="cpu", model_name="sentence-transformers/all-MiniLM-L6-v2"
+    ):
         self.model_name = model_name
         self.model = None
         self.vectorizer = None
@@ -23,7 +25,7 @@ class Embedder:
 
             self.model = SentenceTransformer(model_name, device=device)
             log.info("Loaded semantic embedding model %s on %s", model_name, device)
-        except Exception as exc:  # retain details so reports disclose the real backend
+        except Exception as exc:  # noqa: BLE001 - any load failure must activate the documented fallback
             self.fallback = True
             self.backend = "scikit-learn TF-IDF (lexical-only fallback)"
             self.failure_reason = f"{type(exc).__name__}: {exc}"
@@ -64,7 +66,10 @@ class Embedder:
                 sublinear_tf=True,
                 token_pattern=r"(?u)\b\w+\b",
             )
-            fit_texts = [text if any(char.isalnum() for char in text) else "emptytoken" for text in texts]
+            fit_texts = [
+                text if any(char.isalnum() for char in text) else "emptytoken"
+                for text in texts
+            ]
             try:
                 matrix = self.vectorizer.fit_transform(fit_texts)
             except ValueError as exc:
@@ -73,6 +78,9 @@ class Embedder:
                 self.vectorizer = TfidfVectorizer(vocabulary={"emptytoken": 0})
                 matrix = self.vectorizer.transform(["emptytoken"] * len(texts))
         else:
-            safe_texts = [text if any(char.isalnum() for char in text) else "emptytoken" for text in texts]
+            safe_texts = [
+                text if any(char.isalnum() for char in text) else "emptytoken"
+                for text in texts
+            ]
             matrix = self.vectorizer.transform(safe_texts)
         return matrix.toarray().astype(np.float32)

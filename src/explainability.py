@@ -13,9 +13,21 @@ def location(metadata):
     return "location unavailable"
 
 
-def make_match(query, source, score, lexical, category, combined=None, vector_kind="semantic_embedding"):
+def make_match(
+    query,
+    source,
+    score,
+    lexical,
+    category,
+    combined=None,
+    vector_kind="semantic_embedding",
+):
     combined = float(score) if combined is None else float(combined)
-    score_label = "semantic embedding cosine" if vector_kind == "semantic_embedding" else "TF-IDF vector cosine"
+    score_label = (
+        "semantic embedding cosine"
+        if vector_kind == "semantic_embedding"
+        else "TF-IDF vector cosine"
+    )
     explanation = (
         f"The {score_label} is {score:.3f}, lexical cosine is {lexical:.3f}, and "
         f"the 0.8/0.2 combined score is {combined:.3f}; verify the displayed excerpts and locations."

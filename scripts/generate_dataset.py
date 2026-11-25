@@ -76,33 +76,81 @@ def create_spoken_video(engine, temp_dir, filename, spoken_text):
     output = BASE / "video" / filename
     subprocess.run(
         [
-            "ffmpeg", "-nostdin", "-v", "error", "-y",
-            "-f", "lavfi", "-i", "color=c=black:s=320x240:r=10",
-            "-i", str(wav_path), "-map", "0:v:0", "-map", "1:a:0", "-shortest",
-            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", str(output),
+            "ffmpeg",
+            "-nostdin",
+            "-v",
+            "error",
+            "-y",
+            "-f",
+            "lavfi",
+            "-i",
+            "color=c=black:s=320x240:r=10",
+            "-i",
+            str(wav_path),
+            "-map",
+            "0:v:0",
+            "-map",
+            "1:a:0",
+            "-shortest",
+            "-c:v",
+            "libx264",
+            "-pix_fmt",
+            "yuv420p",
+            "-c:a",
+            "aac",
+            str(output),
         ],
         check=True,
     )
-    duration = float(subprocess.check_output(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(output)],
-        text=True,
-    ).strip())
+    duration = float(
+        subprocess.check_output(
+            [
+                "ffprobe",
+                "-v",
+                "error",
+                "-show_entries",
+                "format=duration",
+                "-of",
+                "csv=p=0",
+                str(output),
+            ],
+            text=True,
+        ).strip()
+    )
     if not 10 <= duration <= 30:
-        raise RuntimeError(f"{filename} duration {duration:.2f}s is outside 10–30 seconds.")
+        raise RuntimeError(
+            f"{filename} duration {duration:.2f}s is outside 10–30 seconds."
+        )
 
 
 def build_manifest():
     submissions = [
         {"id": "garden_original", "kind": "original"},
         {"id": "garden_copy", "kind": "exact-copy", "related_to": "garden_original"},
-        {"id": "coastal_paraphrase", "kind": "paraphrase", "related_to": "garden_original"},
-        {"id": "garden_paraphrase", "kind": "paraphrase", "related_to": "garden_original"},
-        {"id": "garden_spoken", "kind": "spoken-cross-modal-sample", "related_to": "garden_original"},
+        {
+            "id": "coastal_paraphrase",
+            "kind": "paraphrase",
+            "related_to": "garden_original",
+        },
+        {
+            "id": "garden_paraphrase",
+            "kind": "paraphrase",
+            "related_to": "garden_original",
+        },
+        {
+            "id": "garden_spoken",
+            "kind": "spoken-cross-modal-sample",
+            "related_to": "garden_original",
+        },
         {"id": "repair_original", "kind": "independent"},
         {"id": "repair_independent", "kind": "independent"},
         {"id": "island_original", "kind": "independent"},
         {"id": "original_river", "kind": "independent"},
-        {"id": "original_river_spoken", "kind": "spoken-cross-modal-sample", "related_to": "original_river"},
+        {
+            "id": "original_river_spoken",
+            "kind": "spoken-cross-modal-sample",
+            "related_to": "original_river",
+        },
         {"id": "llm_style_synthetic", "kind": "synthetic-style-experiment"},
         {"id": "silent_clip", "kind": "degraded-silent-video"},
         {"id": "empty_text", "kind": "degraded-empty-pdf"},
@@ -110,16 +158,32 @@ def build_manifest():
     ]
     relationships = [
         {"a": "garden_original", "b": "garden_copy", "type": "exact-copy"},
-        {"a": "garden_original", "b": "garden_spoken", "type": "cross-modal-exact-content"},
-        {"a": "original_river", "b": "original_river_spoken", "type": "cross-modal-exact-content"},
+        {
+            "a": "garden_original",
+            "b": "garden_spoken",
+            "type": "cross-modal-exact-content",
+        },
+        {
+            "a": "original_river",
+            "b": "original_river_spoken",
+            "type": "cross-modal-exact-content",
+        },
         {"a": "garden_original", "b": "coastal_paraphrase", "type": "paraphrase"},
         {"a": "garden_original", "b": "garden_paraphrase", "type": "paraphrase"},
         {"a": "coastal_paraphrase", "b": "garden_paraphrase", "type": "exact-copy"},
         {"a": "garden_copy", "b": "coastal_paraphrase", "type": "paraphrase"},
         {"a": "garden_copy", "b": "garden_paraphrase", "type": "paraphrase"},
         {"a": "garden_copy", "b": "garden_spoken", "type": "cross-modal-exact-content"},
-        {"a": "garden_spoken", "b": "coastal_paraphrase", "type": "cross-modal-paraphrase"},
-        {"a": "garden_spoken", "b": "garden_paraphrase", "type": "cross-modal-paraphrase"},
+        {
+            "a": "garden_spoken",
+            "b": "coastal_paraphrase",
+            "type": "cross-modal-paraphrase",
+        },
+        {
+            "a": "garden_spoken",
+            "b": "garden_paraphrase",
+            "type": "cross-modal-paraphrase",
+        },
     ]
     controls = [
         {"a": "garden_original", "b": "island_original"},
@@ -134,7 +198,9 @@ def build_manifest():
         "expected_relationships": relationships,
         "boilerplate_control_pairs": controls,
         "known_degraded_files": [
-            "pdf/corrupted.pdf", "pdf/empty_text.pdf", "video/silent_clip.mp4",
+            "pdf/corrupted.pdf",
+            "pdf/empty_text.pdf",
+            "video/silent_clip.mp4",
         ],
         "notes": (
             "All content is fictional. garden_spoken.mp4 speaks the garden_original passage; "
@@ -152,7 +218,9 @@ def main():
     write_pdf(BASE / "pdf/garden_original.pdf", BOILERPLATE + " " + GARDEN_SOURCE)
     write_pdf(BASE / "pdf/garden_copy.pdf", BOILERPLATE + " " + GARDEN_SOURCE)
     write_pdf(BASE / "pdf/repair_original.pdf", BOILERPLATE + " " + COASTAL_SOURCE)
-    write_pdf(BASE / "pdf/coastal_paraphrase.pdf", BOILERPLATE + " " + GARDEN_PARAPHRASE)
+    write_pdf(
+        BASE / "pdf/coastal_paraphrase.pdf", BOILERPLATE + " " + GARDEN_PARAPHRASE
+    )
     write_pdf(BASE / "pdf/empty_text.pdf", "")
     write_docx(BASE / "docx/garden_paraphrase.docx", GARDEN_PARAPHRASE)
     write_docx(
@@ -179,17 +247,37 @@ def main():
     engines = ("say", "espeak-ng", "espeak")
     engine = next((candidate for candidate in engines if shutil.which(candidate)), None)
     if engine is None:
-        raise RuntimeError("Install macOS say, espeak-ng, or espeak to generate real speech samples.")
+        raise RuntimeError(
+            "Install macOS say, espeak-ng, or espeak to generate real speech samples."
+        )
     with tempfile.TemporaryDirectory(prefix="integrity-tts-") as temp:
         temp_dir = Path(temp)
         create_spoken_video(engine, temp_dir, "garden_spoken.mp4", GARDEN_SOURCE)
         create_spoken_video(engine, temp_dir, "original_river_spoken.mp4", RIVER_SPOKEN)
         subprocess.run(
             [
-                "ffmpeg", "-nostdin", "-v", "error", "-y", "-f", "lavfi",
-                "-i", "color=c=black:s=320x240:r=10", "-f", "lavfi",
-                "-i", "anullsrc=r=16000:cl=mono", "-t", "12", "-c:v", "libx264",
-                "-pix_fmt", "yuv420p", "-c:a", "aac", str(BASE / "video/silent_clip.mp4"),
+                "ffmpeg",
+                "-nostdin",
+                "-v",
+                "error",
+                "-y",
+                "-f",
+                "lavfi",
+                "-i",
+                "color=c=black:s=320x240:r=10",
+                "-f",
+                "lavfi",
+                "-i",
+                "anullsrc=r=16000:cl=mono",
+                "-t",
+                "12",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                "-c:a",
+                "aac",
+                str(BASE / "video/silent_clip.mp4"),
             ],
             check=True,
         )

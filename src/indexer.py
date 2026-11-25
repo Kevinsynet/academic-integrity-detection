@@ -28,7 +28,9 @@ class NumpyIndex:
     def search(self, query, k=10, exclude_document_id=None):
         if k <= 0:
             return []
-        query_vector = normalize_rows(np.asarray(query, dtype=np.float32).reshape(1, -1))[0]
+        query_vector = normalize_rows(
+            np.asarray(query, dtype=np.float32).reshape(1, -1)
+        )[0]
         if query_vector.shape[0] != self.vectors.shape[1]:
             raise ValueError("Query vector dimension does not match the index.")
         scores = self.vectors @ query_vector
