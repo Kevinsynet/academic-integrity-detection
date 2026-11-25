@@ -39,17 +39,14 @@ A fresh Python 3.11 virtual environment was installed from `requirements.txt` ou
 - Generated reports are ignored by default. They contain synthetic examples at present and are reproducible, but inspect them before any deliberate force-add; never publish reports generated from real submissions.
 - `CODE_AUDIT.md` and `INTERVIEW_PREPARATION.md` remain in the repository because their deletion was not clearly authorized.
 
-## Suggested Git commands
+## Publication result
 
-After reviewing the current staged file list, provide the exact public GitHub repository URL. Once the URL is set and you approve commit and push, run the corresponding commit and push commands below. Do not use these commands before that confirmation.
+- **Repository:** https://github.com/Kevinsynet/academic-integrity-detection (public)
+- **Default branch:** `main`
+- **Initial release commit:** `90606c437acf50f2f5a27fc84978e5c1e927988a` (`Initial release: multimodal academic integrity detection system`)
+- **Initial release contents:** 106 files, including synthetic individual reports, aggregate reports, matrices, source, tests, manifests, and documentation.
+- **Push:** successful; remote `origin/main` points to the initial release commit.
+- **License:** none selected. The unsubstantiated MIT attribution and `LICENSE` file were removed. No reuse permission is claimed.
+- **Public access:** unauthenticated repository and raw README requests returned HTTP 200; GitHub metadata reports `private: false` and default branch `main`.
 
-```bash
-git remote add origin <exact-public-repository-url>
-git status --short
-git diff --cached --check
-git diff --cached --stat
-git commit -m "Prepare integrity detection project for release"
-git push -u origin main
-```
-
-The report directories are intentionally ignored by `.gitignore`, so this reviewed synthetic report set was added explicitly. Regenerate them with the README commands after installing dependencies. Do not stage report files generated from real submission text.
+The report directories are ignored for new untracked output by `.gitignore`, while the checked-in synthetic report artifacts are tracked as assignment deliverables. Do not add report files generated from real submission text.

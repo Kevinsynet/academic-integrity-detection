@@ -136,7 +136,7 @@ Generate embeddings in distributed batches across stateless workers and cache th
 
 ## Reports and evaluation outputs
 
-The development CLI writes individual reports and aggregate outputs under `reports/`; the hold-out run writes under `evaluation/holdout_reports/`. These generated directories are ignored by Git because they may contain extracted submission text. The checked-in synthetic inputs, manifests, and EVALUATION.md results are sufficient to regenerate and verify them with the documented commands. Keep reports from real submissions outside the public repository.
+The development CLI writes individual reports and aggregate outputs under `reports/`; the hold-out run writes under `evaluation/holdout_reports/`. The checked-in files in these directories are verified reports for the fictional datasets. `.gitignore` prevents new untracked report outputs from being added by default, but tracked sample reports can change when overwritten. For real submissions, choose a private `--output_dir` outside this repository and keep the files and reports out of Git.
 
 ## AI coding assistant disclosure
 
